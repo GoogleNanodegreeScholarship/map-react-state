@@ -5,9 +5,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      data: ""
     }
   }
-
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users/')
@@ -17,9 +17,13 @@ class App extends Component {
       }))
   }
 
+
   render() {
     return (
       <div className="App">
+        {Object.keys(this.state.data).map((key, i) =>
+        <div>{key}</div>
+        )}
       </div>
     );
   }
